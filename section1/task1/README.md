@@ -22,6 +22,10 @@ Hint:
 
 3. Formatting downloaded data by [pandas](https://pandas.pydata.org/pandas-docs/stable/index.html), desired output example [BTC-USDT-1h.csv](./BTC_USDT_1h.csv)
 
+4. volumefrom: The total amount of the symbol currency traded into the quote currency during this period of time (in units of the symbol currency).
+
+5. volumeto: The total amount of the base currency traded into the quote currency during this period of time (in units of the base currency).
+
 ### Optional
 
 #### 1. Modularize your code
