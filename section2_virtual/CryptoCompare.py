@@ -55,7 +55,7 @@ class CryptoCompare:
             # Helper function
             df = self.get_candle_helper(fsym, tsym, freq, '23', unix, e)
             # Output csv
-            df.to_csv('BTC_USDT_1h_Test.csv', mode='a', index=False, header=False)
+            df.to_csv('BTC_USDT_1h.csv', mode='a', index=False, header=False)
 
     # Optional
     # Member function for TOPLIST endpoint

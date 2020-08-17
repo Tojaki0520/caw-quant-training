@@ -2,7 +2,7 @@ from binance.client import Client
 import pandas as pd
 
 # Setup trading api
-api_key = 'DkDvBnk6a5udNwg4OCB93p8D8gr9n4WEL8tNjO7xohtrizebjyshsa7YRKovAKFU'
+api_key = open("task2_api.txt", "r").read()
 api_secret = 'HuCf5afQWv8eRbiLXRCmTkYXOLEF3WCen5iWdd7YI8y6tjUz5VbUIfXezNjAS5L9'
 client = Client(api_key, api_secret)
 

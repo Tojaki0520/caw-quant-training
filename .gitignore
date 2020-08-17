@@ -179,3 +179,8 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/linux,macos,python,windows
 
 .vscode
+
+# API
+task1_api.txt
+task2_api.txt
+task3_api.txt
