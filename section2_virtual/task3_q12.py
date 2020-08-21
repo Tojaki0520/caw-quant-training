@@ -10,7 +10,7 @@ import backtrader as bt
 import pandas as pd
 import matplotlib as plt
 import numpy as np
-import CryptoCompare
+from CryptoCompare import CryptoCompare
 import pyfolio as pf
 import argparse
 import random
@@ -28,9 +28,9 @@ from_datetime = '2020-01-01 00:00:00' # start time
 to_datetime = '2020-04-01 00:00:00' # end time
 
 # get candle data
-data_fetcher = new CryptoCompare()
+"""data_fetcher = CryptoCompare()
 data_fetcher.get_candle('BTC', 'USDT', '1', '2017-04-01', '2020-04-01', 'binance')
-os.rename('./BTC_USDT_1h.csv','./data/BTC_USDT_1h.csv')
+os.rename('./BTC_USDT_1h.csv','./data/BTC_USDT_1h.csv')"""
 
 title = ['','Name','sma_pfast','sma_pslow','Return','MaxDrawDown','TotalTrades#','WinTrades#',
          'LossTrades#','WinRatio','AverageWin$','AverageLoss$','LongestWinStreak','LongestLossStreak',

@@ -7,6 +7,7 @@ import sys  # To find out the script name (in argv[0])
 
 # Import the backtrader platform
 import backtrader as bt
+import matplotlib as plt
 
 # Create a Stratey
 class TestStrategy(bt.Strategy):
@@ -113,7 +114,13 @@ if __name__ == '__main__':
     cerebro.run()
 
     # Plotting
-    cerebro.plot()
+    reportdir = './report' # report path
+    figfile = 'task1.png'
+    plt.rcParams['figure.figsize'] = [13.8, 10]
+    fig = cerebro.plot(style='candlestick', barup='green', bardown='red')
+    fig[0][0].savefig(
+	    os.path.join(reportdir, figfile),
+	    dpi=480)
 
     # Print out the final result
     print('Final Portfolio Value: %.2f' % cerebro.broker.getvalue())

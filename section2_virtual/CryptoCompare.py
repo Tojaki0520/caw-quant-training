@@ -6,7 +6,7 @@ from datetime import timedelta
 
 # Optional
 # Class for CryptoCompare
-class CryptoCompare:
+class CryptoCompare():
     def __init__(self):
         #self.payload = {}
         self.prefix = 'https://min-api.cryptocompare.com/data/'

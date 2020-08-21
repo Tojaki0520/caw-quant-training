@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib as plt
 
 # all your own modules in the end
-import CryptoCompare
+from CryptoCompare import CryptoCompare
 
 # params
 datadir = './data' # data path
@@ -21,9 +21,9 @@ from_datetime = '2020-01-01 00:00:00' # start time
 to_datetime = '2020-04-01 00:00:00' # end time
 
 # get candle data
-data_fetcher = new CryptoCompare()
+"""data_fetcher = CryptoCompare()
 data_fetcher.get_candle('BTC', 'USDT', '1', '2017-04-01', '2020-04-01', 'binance')
-os.rename('./BTC_USDT_1h.csv','./data/BTC_USDT_1h.csv')
+os.rename('./BTC_USDT_1h.csv','./data/BTC_USDT_1h.csv')"""
 
 # introduce new DonchianChannels indicator
 class DonchianChannels(bt.Indicator):
@@ -43,11 +43,13 @@ class TestStrategy(bt.Strategy):
     
     def next(self):
         # buy
-        if self.data[0] > self.dc.high[0]:
-            self.buy()
+        if not self.position:
+            if self.data[0] > self.dc.high[0]:
+                self.buy()
         # sell
-        elif self.data[0] < self.dc.low[0]:
-            self.sell()
+        elif self.position:
+            if self.data[0] < self.dc.low[0]:
+                self.sell()
 
 # initialization
 cerebro = bt.Cerebro()
